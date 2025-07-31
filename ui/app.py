@@ -11,12 +11,13 @@ st.set_page_config(page_title="Heart Disease Predictor", layout="wide")
 model_path = os.path.join("models", "final_model.pkl")
 clf_model = joblib.load(model_path)
 
+
 json_path = os.path.join("processed", "feature_selection.json")
 with open(json_path, 'r') as f:
+    feature_names = json.load(f) 
 
-# Load dataset
-data = pd.read_csv(r'C:\Users\LOQ\OneDrive\Desktop\Heart_Disease_Project\processed\x_features.csv')
-target = pd.read_csv(r'C:\Users\LOQ\OneDrive\Desktop\Heart_Disease_Project\processed\target.csv')
+data = pd.read_csv(os.path.join("processed", "x_features.csv"))
+target = pd.read_csv(os.path.join("processed", "target.csv"))
 data['Target'] = target
 
 
