@@ -4,10 +4,16 @@ import json
 import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
+import os
 
 st.set_page_config(page_title="Heart Disease Predictor", layout="wide")
 
-clf_model = joblib.load(r'C:\Users\LOQ\OneDrive\Desktop\Heart_Disease_Project\models\final_model.pkl')
+
+
+
+model_path = os.path.join("models", "final_model.pkl")
+clf_model = joblib.load(model_path)
+
 
 with open(r'C:\Users\LOQ\OneDrive\Desktop\Heart_Disease_Project\processed\feature_selection.json', 'r') as f:
     feature_names = json.load(f)
