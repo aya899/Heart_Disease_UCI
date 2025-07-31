@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import json
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -8,7 +7,6 @@ import joblib
 
 st.set_page_config(page_title="Heart Disease Predictor", layout="wide")
 
-# Load model and features
 clf_model = joblib.load(r'C:\Users\LOQ\OneDrive\Desktop\Heart_Disease_Project\models\final_model.pkl')
 
 with open(r'C:\Users\LOQ\OneDrive\Desktop\Heart_Disease_Project\processed\feature_selection.json', 'r') as f:
