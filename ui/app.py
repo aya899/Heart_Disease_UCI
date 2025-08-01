@@ -233,3 +233,4 @@ with right_col:
 
     ax.set_ylabel("Count")
     st.pyplot(fig)
+# Force rebuild
